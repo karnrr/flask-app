@@ -1,4 +1,6 @@
 pipeline {
+  agent any
+
   options {
     timeout(time: 20, unit: 'MINUTES') // set the total execution time of the job
   }
