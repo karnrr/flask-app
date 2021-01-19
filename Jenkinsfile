@@ -8,8 +8,14 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git clone 'https://github.com/karnrr/flask-app.git'
-        //checkout scm
+        //git clone 'https://github.com/karnrr/flask-app.git'
+        checkout([$class: 'GitSCM',
+          branches: [[name: '*/master']],
+          extensions: scm.extensions,
+          userRemoteConfigs:[[
+            url: 'https://github.com/karnrr/flask-app.git'
+          ]]
+        ])
       }
     }
 
