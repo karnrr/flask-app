@@ -8,7 +8,6 @@ flask_app = Flask("demo")
 #    return "Hello world", 200
 #
 
-from . import api
 
 
 
