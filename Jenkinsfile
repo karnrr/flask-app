@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git clone https://github.com/karnrr/flask-app.git
+        git clone 'https://github.com/karnrr/flask-app.git'
         //checkout scm
       }
     }
