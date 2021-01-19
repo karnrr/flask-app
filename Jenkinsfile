@@ -43,7 +43,7 @@ pipeline {
 
         //  sh 'python3 -m pylint -f text * | cat > report.txt '
         withPythonEnv('/usr/local/bin/python3.6') {
-          sh 'python3 -m flake8 *'
+          sh 'python3 -m pylint * | exit 0'
         }
       }
     }
