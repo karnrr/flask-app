@@ -21,20 +21,28 @@ pipeline {
 
     stage('Setup') {
       steps {
-        script {
-          sh """
-          pip install -r requirements.txt
-          """
+        // script {
+        //   sh """
+        //   pip install -r requirements.txt
+        //   """
+        // }
+
+        withPythonEnv('/usr/local/bin/python3.6') {
+          sh 'pip install -r requirements.txt'
         }
       }
     }
     
     stage('Linting') {
       steps {
-        script {
-          sh """
-          pylint app/*.py
-          """
+        // script {
+        //   sh """
+        //   pylint app/*.py
+        //   """
+        // }
+
+        withPythonEnv('/usr/local/bin/python3.6') {
+          sh 'python3 -m pylint *'
         }
       }
     }
