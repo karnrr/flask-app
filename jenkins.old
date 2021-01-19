@@ -4,6 +4,12 @@ pipeline{
   }
   
   stages{
+    stage('checkout'){
+      steps {
+        git clone https://github.com/karnrr/flask-app.git
+      }
+    }
+
     stage('Setup'){
       steps{
         script{
