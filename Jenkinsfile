@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        //git clone https://github.com/karnrr/flask-app.git
-        checkout scm
+        git clone https://github.com/karnrr/flask-app.git
+        //checkout scm
       }
     }
 
