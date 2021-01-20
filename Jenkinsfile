@@ -47,5 +47,17 @@ pipeline {
         }
       }
     }
+
+    stage('Cythonize') {
+      steps {
+        withPythonEnv('/usr/local/bin/python3.6') {
+          sh 'pip install cython'
+        }
+
+        withPythonEnv('/usr/local/bin/python3.6') {
+          sh 'python cython_setup.py build_ext'
+        }
+      }   
+    }
   }
 }
